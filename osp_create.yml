@@ -1,0 +1,18 @@
+---
+- name: Testing initial on itcloud
+  host: localhost
+
+  tasks:
+  - name: Create a new instance and attach ntk
+    os_server:
+       state: present
+       name: vm1
+       image: 5b405a63-a0ae-44fa-868f-7d94fcc1c1b1
+       key_name: chetan_key
+       timeout: 200
+       flavor: 0ac0ecf2-effb-4dc5-a83e-820152fa4b27
+       auto_ip: no
+       network: c999a65d-a9b6-416f-b817-ab997343459b
+       security_groups: 55dc6087-bf24-48aa-80ad-a96cbe1133c8
+       meta:
+         os: cirros 
